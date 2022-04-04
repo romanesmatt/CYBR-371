@@ -6,7 +6,7 @@
 
 !/bin/bash
 
-# Creating directories for each staff member
+# Starting off by creating user groups for all staff members
 
 
 
