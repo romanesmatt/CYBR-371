@@ -1,10 +1,13 @@
+# IF THERE IS TIME, POLISH THIS UP
+
+
 # Matt Romanes
 # romanematt
 # 300492211
 
 # Question 3
 
-!/bin/bash
+#!/bin/bash
 
 # Starting off by creating user groups for all staff members
 groupadd -f Doctors

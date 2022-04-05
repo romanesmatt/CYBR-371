@@ -4,7 +4,7 @@
 
 # Question 2
 
-!/bin/bash
+#!/bin/bash
 
 # Creating the directory WellingtonClinic inside the /opt/directory
 
