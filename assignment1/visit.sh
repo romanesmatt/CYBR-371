@@ -32,6 +32,14 @@ surname_letter={surname: -1}
 date_of_birth=${dob///}
 
 file_name="$first_name_letter$surname_letter$date_of_birth"
-echo "$file_name"
 cd $file_name
-f="pmedicalrecord.log"
+
+# Format is as follows:
+# Date of visit
+# Doctor examined
+# Health issue
+# Medication
+# dosage
+
+# echo ""
+
