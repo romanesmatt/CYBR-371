@@ -7,131 +7,34 @@
 #!/bin/bash
 
 
-# ======================================================================
-# Setting up ACLs that only the administrators can execute these scripts
-# ======================================================================
-cd
-cd WellingtonClinic/scripts
-chmod -wx staff-create.sh
-chmod -wx file-system-setup.sh
-chmod -rwx acls.sh
-chmod -wx register-patient.sh
+cd ../../
 
-setfacl -m u:pasa1995:rwx staff-create.sh
-setfacl -m u:pasa1995:rwx file-system-setup.sh
-setfacl -m u:pasa1995:rwx acls.sh
+sudo setfacl -Rm g:Administrator:rwx WellingtonClinic
+sudo setfacl -m o:r-x WellingtonClinic
 
-# ======================================================================
-# Setting up ACLs as rwx for admin and r for users only
-# ======================================================================
+cd ../../
+cd WellingtonClinic
 
-# ======================================================================
-#Doctors
-# ======================================================================
+sudo setfacl -Rm o:r-x Staff
+sudo setfacl -Rm o:r-x Staff
+sudo setfacl -Rm o:r-x Staff
+sudo setfacl -Rm o:r-x Staff
 
-# Mary Teresa
-cd
-cd WellingtonClinic/staff/Doctors
-cd mate1997
-chmod -wx sbasicinfo.log
-setfacl -m u:pasa1995:rwx sbasicinfo.log
-setfacl -m mask:r sbasicinfo.log
+cd ../../
+cd WellingtonClinic
+cd Scripts
 
-# Breana Kipling
-cd
-cd WellingtonClinic/staff/Doctors
-cd brki2018
-chmod -wx sbasicinfo.log
-setfacl -m u:pasa1995:rwx sbasicinfo.log
-setfacl -m mask:r sbasicinfo.log
+# GET BACK TO THIS LATER
 
-# Mandy Dannel
-cd
-cd WellingtonClinic/staff/Doctors
-cd mada1993
-chmod -wx sbasicinfo.log
-setfacl -m u:pasa1995:rwx sbasicinfo.log
-setfacl -m mask:r sbasicinfo.log
+sudo setfacl -m g:Administrator:rwx audit.sh
+sudo setfacl -m g:Receptionists:r-x searchdoctor.sh
+sudo setfacl -m g:Receptionists:r-x register-patient.sh
+sudo setfacl -m g:Doctors:r-x visit.sh
+sudo setfacl -m g:Doctors:r-x register-patient.sh
+sudo setfacl -m g:Nurses:r-x register-patient.sh
 
-# Lance Bourne
-cd
-cd WellingtonClinic/staff/Doctors
-cd labo2002
-chmod -wx sbasicinfo.log
-setfacl -m u:pasa1995:rwx sbasicinfo.log
-setfacl -m mask:r sbasicinfo.log
-
-# ======================================================================
-# Nurses
-# ======================================================================
-
-
-# Lucia Blakeley
-cd
-cd WellingtonClinic/staff/Nurses
-cd lubl2004
-chmod -wx sbasicinfo.log
-setfacl -m u:pasa1995:rwx sbasicinfo.log
-setfacl -m mask:r sbasicinfo.log
-
-# Phil McGraw
-cd
-cd WellingtonClinic/staff/Nurses
-cd phmc2008
-chmod -wx sbasicinfo.log
-setfacl -m u:pasa1995:rwx sbasicinfo.log
-setfacl -m mask:r sbasicinfo.log
-
-# ======================================================================
-# Receptionists
-# ======================================================================
-
-# Andy Smith
-cd
-cd WellingtonClinic/staff/Receptionists
-cd ansm2002
-chmod -wx sbasicinfo.log
-setfacl -m u:pasa1995:rwx sbasicinfo.log
-setfacl -m mask:r sbasicinfo.log
-
-# Setting additional ACL permissions for Lucia and Phil as 
-# from time to time they are also receptionists
-
-# Lucia Blakeley
-cd
-cd WellingtonClinic/staff/Receptionists
-cd lubl2004
-chmod -wx sbasicinfo.log
-setfacl -m u:pasa1995:rwx sbasicinfo.log
-setfacl -m mask:r sbasicinfo.log
-
-# Phil McGraw
-cd
-cd WellingtonClinic/staff/Receptionists
-cd phmc2008
-chmod -wx sbasicinfo.log
-setfacl -m u:pasa1995:rwx sbasicinfo.log
-setfacl -m mask:r sbasicinfo.log
-
-
-# ======================================================================
-# Administrators
-# ======================================================================
-
-# Pauline Sanderson
-cd
-cd WellingtonClinic/staff/Administrators
-cd pasa1995
-chmod -wx sbasicinfo.log
-setfacl -m u:pasa1995:rwx sbasicinfo.log
-setfacl -m mask:r sbasicinfo.log
-
-# ======================================================================
-# ACLs for register-patient.sh
-# ======================================================================
-cd
-cd WellingtonClinic/scripts
-chmod -rwx register-patient.sh
-setfacl -m u:ansm2002:rwx patients.sh
-setfacl -m u:root:rwx patients.sh
-setfacl -m mask:r patients.sh
+cd ../../
+cd WellingtonClinic
+#Double checking that only the Receptionist group is the owner of the Patients group
+sudo chgrp Receptionists Patients
+sudo setfacl -Rm g:Administrator:rwx Patients
