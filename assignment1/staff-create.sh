@@ -18,7 +18,7 @@ sudo groupadd -f Administrators
 # Adding Doctors
 
 cd 
-cd WellingtonClinic/Staff/Doctors
+cd /opt/WellingtonClinic/Staff/Doctors
 
 # Mary Teresa
 mkdir -p mate1997
@@ -46,7 +46,7 @@ Street Franklin Greytown 8567, Email: lancb@outlook.com, Phone: 083736456" > lab
 
 # Adding Nurses
 cd
-cd WellingtonClinic/Staff/Nurses
+cd /opt/WellingtonClinic/Staff/Doctors
 
 # Lucia Blakeley
 mkdir -p lubl2004
@@ -62,7 +62,7 @@ Street Petone Lower Hutt 8435, Email: philmcg@gmail.com, Phone: 02384756" > phmc
 
 # Adding Receptionists
 cd 
-cd WellingtonClinic/Staff/Receptionists
+cd /opt/WellingtonClinic/Staff/Doctors
 
 mkdir -p ansm2002
 sudo useradd -m -d /home/ansm2002/ -g Receptionists ansm2002
@@ -71,7 +71,7 @@ Wellington 5011, Email: smith.andy74@gmail.com, Phone: 07284756" > ansm2002/sbas
 
 # Adding Administrators
 cd 
-cd WellingtonClinic/Staff/Administrators
+cd /opt/WellingtonClinic/Staff/Doctors
 
 mkdir -p pasa1995
 sudo useradd -m -d /home/pasa1995/ -g Administrators pasa1995
