@@ -19,9 +19,8 @@ echo "Date Of Birth (DD/MM/YYYY): "
 read -r
 dob=$REPLY
 
-# Executing search for information about a patient's visit
 cd
-cd/opt/WellingtonClinic/patients
+cd /opt/WellingtonClinic/Patients
 
 echo first_name
 echo surname
@@ -32,7 +31,7 @@ surname_letter={surname: -1}
 date_of_birth=${dob///}
 
 file_name="$first_name_letter$surname_letter$date_of_birth"
-cd $file_name
+cd "$file_name"
 
 # Format is as follows:
 # Date of visit
@@ -41,5 +40,26 @@ cd $file_name
 # Medication
 # dosage
 
-# echo ""
+echo "Date Of Visit: "
+read -r
+dov=$REPLY
+
+echo "Doctor Assigned: "
+read -r
+doc=$REPLY
+
+echo "Issue: "
+read -r
+issue=$REPLY
+
+echo "Medication: "
+read -r
+med=$REPLY
+
+echo "Dosage: "
+read -r
+dosage=$REPLY
+
+
+echo -e "$dov, $doc, $issue, $med, $dosasge" >> pmedicalrecord.log
 

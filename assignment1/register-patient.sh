@@ -6,7 +6,7 @@
 
 #!/bin/bash
 
-cd WellingtonClinic/Patients
+cd /opt/WellingtonClinic/Patients
 
 # Registering a new patients as given in assignment instructions
 echo "Enter the following information about the patient:"
@@ -62,6 +62,14 @@ echo "Physical Address: $address"
 echo "Email: $email"
 echo "Phone Number: $phone_no"
 echo "Registered Doctor: $reg_doc"
+
+echo "Enter Patient Username as: first letter of firstname, last letter of surname and dob in numerical order"
+read directoryName
+mkdir -p "$directoryName"
+
+cd "$directoryName"
+touch pbasicinfo.log
+echo "$first_name, $surname, $dob, $gender, $address, $email, $phone_no, $reg_doc" >> pbasicinfo.log
 
 
 
