@@ -7,7 +7,6 @@
 #!/bin/bash
 
 # Creating the directory WellingtonClinic inside the /opt/directory
-cd
 mkdir WellingtonClinic
 cd WellingtonClinic 
 mkdir Scripts Staff Patients
