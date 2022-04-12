@@ -6,3 +6,6 @@
 
 #!/bin/bash
 
+echo "Enter patient's first name: "
+read -r
+
