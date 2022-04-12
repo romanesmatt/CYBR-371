@@ -33,7 +33,7 @@ sudo setfacl -m g:Doctors:r-x searchpatients.sh
 sudo setfacl -m g:Nurses:r-x searchpatients.sh
 
 # Going back to the WellingtonClinic directory
-cd ..
+cd ../
 
 #Ensuring that only the Receptionists are the owners of the Patient directory
 sudo chgrp Receptionists Patients

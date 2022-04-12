@@ -16,7 +16,7 @@ sudo groupadd -f Receptionists
 sudo groupadd -f Administrators
 
 # Adding Doctors
-cd /opt/WellingtonClinic/Staff/Doctors
+cd ../Staff/Doctors
 
 # Mary Teresa
 mkdir -p mate1997
@@ -47,7 +47,7 @@ Street Franklin Greytown 8567, Email: lancb@outlook.com, Phone: 083736456" > lab
 chmod -R 774 sbasicinfo.log
 
 # Adding Nurses
-cd /opt/WellingtonClinic/Staff/Nurses
+cd ../Nurses
 
 # Lucia Blakeley
 mkdir -p lubl2004
@@ -64,7 +64,7 @@ Street Petone Lower Hutt 8435, Email: philmcg@gmail.com, Phone: 02384756" > phmc
 chmod -R 774 sbasicinfo.log
 
 # Adding Receptionists
-cd /opt/WellingtonClinic/Staff/Receptionists
+cd ../Receptionists
 
 mkdir -p ansm2002
 sudo useradd -m -d /home/ansm2002/ -g Receptionists ansm2002
@@ -73,12 +73,10 @@ Wellington 5011, Email: smith.andy74@gmail.com, Phone: 07284756" > ansm2002/sbas
 chmod -R 774 sbasicinfo.log
 
 # Adding Administrators
-cd /opt/WellingtonClinic/Staff/Administrators
+cd ../Administrators
 
 mkdir -p pasa1995
 sudo useradd -m -d /home/pasa1995/ -g Administrators pasa1995
 echo "Pauline Sanderson, Date-of-Birth: 08/03/1993, Date-joined-the-clinic: 1995, Address: 2452
 Randolph Street Bedford Auckland 7752, Email: paulsand@admins.co.nz, Phone: 03747543" > pasa1995/sbasicinfo.log
 chmod -R 774 sbasicinfo.log
-
-cd /opt/

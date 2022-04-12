@@ -6,7 +6,8 @@
 
 #!/bin/bash
 
-cd /opt/WellingtonClinic/Patients
+# Going to the Patients directory first before starting off
+cd ../Patients
 
 # Registering a new patients as given in assignment instructions
 echo "Enter the following information about the patient:"
@@ -62,6 +63,8 @@ echo "Physical Address: $address"
 echo "Email: $email"
 echo "Phone Number: $phone_no"
 echo "Registered Doctor: $reg_doc"
+
+# Creating file name from inputted information
 
 echo "Enter Patient Username as: first letter of firstname, last letter of surname and dob in numerical order"
 read directoryName

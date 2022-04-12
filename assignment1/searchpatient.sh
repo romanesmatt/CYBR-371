@@ -6,19 +6,19 @@
 
 #!/bin/bash
 
-echo "Enter Doctor's first name:"
+echo "Enter patient's first name:"
 read -r
-doc_first_name = $REPLY
+first_name = $REPLY
 
-echo "Enter Doctor's surname:"
+echo "Enter patient's surname:"
 read -r
-doc_surname = $REPLY
+surname = $REPLY
 
 echo "Enter Doctor's username:"
 read -r
 doc_username = $REPLY
 
-cd  /opt/WellingtonClinic/Patients
+cd  ../Patients
 
 
 
