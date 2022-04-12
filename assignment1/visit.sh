@@ -6,6 +6,7 @@
 
 #!/bin/bash
 
+# Patient information
 echo "Enter the following information about the patient: "
 echo "First Name: "
 read -r
@@ -19,26 +20,11 @@ echo "Date Of Birth (DD/MM/YYYY): "
 read -r
 dob=$REPLY
 
-cd
-cd /opt/WellingtonClinic/Patients
-
 echo first_name
 echo surname
 echo dob
 
-first_name_letter=${first_name:0:1}
-surname_letter={surname: -1}
-date_of_birth=${dob///}
-
-file_name="$first_name_letter$surname_letter$date_of_birth"
-cd "$file_name"
-
-# Format is as follows:
-# Date of visit
-# Doctor examined
-# Health issue
-# Medication
-# dosage
+# Getting doctor and medication information
 
 echo "Date Of Visit: "
 read -r
@@ -59,6 +45,13 @@ med=$REPLY
 echo "Dosage: "
 read -r
 dosage=$REPLY
+
+first_name_letter=${first_name:0:1}
+surname_letter={surname: -1}
+date_of_birth=${dob///}
+
+file_name="$first_name_letter$surname_letter$date_of_birth"
+cd ../Patients/"$file_name"
 
 
 echo -e "$dov, $doc, $issue, $med, $dosasge" >> pmedicalrecord.log
