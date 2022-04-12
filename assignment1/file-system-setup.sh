@@ -13,5 +13,3 @@ mkdir Scripts Staff Patients
 cd Staff
 mkdir Administrators Nurses Receptionists Doctors
         
-
-
