@@ -37,16 +37,14 @@ sudo setfacl -m g:Receptionists:r-x searchpatient.sh
 sudo setfacl -m g:Receptionists:r-x searchdoctor.sh
 sudo setfacl -m g:Receptionists:r-x register-patient.sh
 sudo setfacl -m g:Receptionists:r-x assign-doc.sh
-sudo setfacl -m g:Receptionists:r-x searchpatient.sh
 # Script permissions for Doctors
 sudo setfacl -m g:Doctors:r-x visit.sh
 # Script permissions for Nurses
-sudo setfacl -m g:Nurses:r-x searchpatient.sh
 sudo setfacl -m g:Nurses:r-x check-medication.sh
-# Setting permissions for scripts that are exclusive
-# to Receptionists
-sudo setfacl -m g:Nurses:--- searchpatient.sh
-sudo setfacl -m g:Nurses:--- searchdoctor.sh
+# Denying phmc2008 and lubl2004 access to the following
+# scripts as they are exclusive to Receptionists only
+sudo setfacl -m u:lubl2004:--- searchpatient.sh
+sudo setfacl -m u:phmc2008:--- searchdoctor.sh
 
 # Going back to the WellingtonClinic directory
 cd ..

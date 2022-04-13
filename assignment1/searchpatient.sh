@@ -22,6 +22,3 @@ echo "Patients that have had appointments with $doc_first_name $doc_surname:"
 
 
 
-
-
-
