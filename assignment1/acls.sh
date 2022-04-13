@@ -49,7 +49,7 @@ sudo setfacl -m g:Nurses:--- searchpatient.sh
 sudo setfacl -m g:Nurses:--- searchdoctor.sh
 
 # Going back to the WellingtonClinic directory
-cd ../
+cd ..
 
 #Ensuring that only the Administrators are the owners of the Patient directory
 sudo chgrp Administrators Patients
