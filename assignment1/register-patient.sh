@@ -65,8 +65,19 @@ echo "Phone Number: $phone_no"
 echo "Registered Doctor: $reg_doc"
 
 # Creating file name from inputted information
-echo "Enter Patient Username as: first letter of firstname, last letter of surname and dob in numerical order"
-read directoryName
+
+# Getting substring of patient's first name
+# and surname to create file name
+
+# Format is as follows:
+# - First letter of first name
+# - Last letter of surname
+# - Last two digits of patient's date of birth
+first_name_letter=${first_name:0:1}
+surname_letter=${surname: -1}
+birth={$dob///}
+
+directoryName= "$first_name_letter$surname_letter$birth"
 mkdir -p "$directoryName"
 
 # Sending information to pbasicinfo.log
