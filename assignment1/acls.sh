@@ -6,6 +6,9 @@
 
 #!/bin/bash
 
+# I have decided to set permissions based on user groups rather than individually
+# setting permissions for each user and file. I determined it was more efficient
+# doing the former than the latter.
 
 # Going to the /opt/ directory
 cd ../../
@@ -25,16 +28,29 @@ sudo setfacl -Rm o:r-x Patients
 cd Scripts
 
 # Setting permissions for scripts inside the Script directory
+# Permissions for the other script files
+
+# Script permissions for Administrators
 sudo setfacl -m g:Administrators:rwx audit.sh
+# Script permissions for Receptionists
 sudo setfacl -m g:Receptionists:r-x searchpatient.sh
-sudo setfacl -m g:Receptionists:r-x patients.sh
+sudo setfacl -m g:Receptionists:r-x searchdoctor.sh
+sudo setfacl -m g:Receptionists:r-x register-patient.sh
+sudo setfacl -m g:Receptionists:r-x assign-doc.sh
+sudo setfacl -m g:Receptionists:r-x searchpatient.sh
+# Script permissions for Doctors
 sudo setfacl -m g:Doctors:r-x visit.sh
-sudo setfacl -m g:Doctors:r-x searchpatients.sh
-sudo setfacl -m g:Nurses:r-x searchpatients.sh
+# Script permissions for Nurses
+sudo setfacl -m g:Nurses:r-x searchpatient.sh
+sudo setfacl -m g:Nurses:r-x check-medication.sh
+# Setting permissions for scripts that are exclusive
+# to Receptionists
+sudo setfacl -m g:Nurses:--- searchpatient.sh
+sudo setfacl -m g:Nurses:--- searchdoctor.sh
 
 # Going back to the WellingtonClinic directory
 cd ../
 
-#Ensuring that only the Receptionists are the owners of the Patient directory
-sudo chgrp Receptionists Patients
+#Ensuring that only the Administrators are the owners of the Patient directory
+sudo chgrp Administrators Patients
 sudo setfacls -Rm g:Administrators:rwx Patients

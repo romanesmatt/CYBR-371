@@ -65,11 +65,11 @@ echo "Phone Number: $phone_no"
 echo "Registered Doctor: $reg_doc"
 
 # Creating file name from inputted information
-
 echo "Enter Patient Username as: first letter of firstname, last letter of surname and dob in numerical order"
 read directoryName
 mkdir -p "$directoryName"
 
+# Sending information to pbasicinfo.log
 cd "$directoryName"
 touch pbasicinfo.log
 echo "$first_name, $surname, $dob, $gender, $address, $email, $phone_no, $reg_doc" >> pbasicinfo.log

@@ -46,12 +46,13 @@ echo "Dosage: "
 read -r
 dosage=$REPLY
 
+# Substring of information given first name, last name and date of birth
 first_name_letter=${first_name:0:1}
 surname_letter={surname: -1}
 date_of_birth=${dob///}
 
 file_name="$first_name_letter$surname_letter$date_of_birth"
-cd ../Patients/"$file_name"
+cd ../../Patients/"$file_name" #Proceeding to the WellingtonClinic/Patients directory from the
 
 
 echo -e "$dov, $doc, $issue, $med, $dosasge" >> pmedicalrecord.log

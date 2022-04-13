@@ -1,6 +1,3 @@
-# IF THERE IS TIME, POLISH THIS UP
-
-
 # Matt Romanes
 # romanematt
 # 300492211
@@ -47,18 +44,20 @@ Street Franklin Greytown 8567, Email: lancb@outlook.com, Phone: 083736456" > lab
 chmod -R 774 sbasicinfo.log
 
 # Adding Nurses
+# NOTE: Both of these nurses can be receptionists on some occasions
+
 cd ../Nurses
 
 # Lucia Blakeley
 mkdir -p lubl2004
-sudo useradd -m -d /home/lubl2004/ -G Nurses,Receptionists lubl2004
+sudo useradd -m -d /home/lubl2004/ -G Nurses,Receptionists lubl2004 #Adding user to two groups
 echo "Lucia Blakeley, Date of Birth: 11/09/1980, Date joined the clinic: 2004, Address: 935
 Massachusetts Avenue Hamilton 4562, Email: lucyblak@outlook.com, Phone: 38347463" > lubl2004/sbasicinfo.log
 chmod -R 774 sbasicinfo.log
 
 # Phil McGraw
 mkdir -p phmc2008
-sudo useradd -m -d /home/phmc2008/ -G Nurses,Receptionists  phmc2008
+sudo useradd -m -d /home/phmc2008/ -G Nurses,Receptionists  phmc2008 #Adding user to two groups
 echo "Phil McGraw, Date of Birth: 15/04/1984, Date joined the clinic: 2008, Address: 45 Razyn
 Street Petone Lower Hutt 8435, Email: philmcg@gmail.com, Phone: 02384756" > phmc2008/sbasicinfo.log
 chmod -R 774 sbasicinfo.log
